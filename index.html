@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lumen Works｜個人事業のホームページ（サンプル）</title>
+    <meta
+      name="description"
+      content="Lumen Worksは個人事業主向けホームページのサンプルです。事業紹介・経歴・サービス・お問い合わせの構成例を掲載しています。"
+    />
+    <meta name="robots" content="index,follow" />
+    <meta name="theme-color" content="#0f6e56" />
+    <link rel="canonical" href="https://lirenabe.github.io/www/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="og:site_name" content="Lumen Works" />
+    <meta property="og:title" content="Lumen Works｜個人事業のホームページ（サンプル）" />
+    <meta
+      property="og:description"
+      content="事業紹介・経歴・サービス・お問い合わせの構成例。個人事業主向けホームページのサンプルページです。"
+    />
+    <meta property="og:url" content="https://lirenabe.github.io/www/" />
+    <meta
+      property="og:image"
+      content="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80"
+    />
+    <meta property="og:image:alt" content="明るいワークスペースのサンプル画像" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Lumen Works｜個人事業のホームページ（サンプル）" />
+    <meta
+      name="twitter:description"
+      content="事業紹介・経歴・サービス・お問い合わせの構成例。個人事業主向けホームページのサンプルページです。"
+    />
+    <meta
+      name="twitter:image"
+      content="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap"
+      rel="stylesheet"
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Lumen Works",
+        "description": "個人事業主向けホームページのサンプルです。事業紹介・経歴・サービス案内の構成例を掲載しています。",
+        "url": "https://lirenabe.github.io/www/",
+        "email": "hello@example.com",
+        "areaServed": "JP",
+        "inLanguage": "ja"
+      }
+    </script>
+
+    <style>
+      :root {
+        --ink: #1c2430;
+        --muted: #4d5866;
+        --paper: #f3f6f4;
+        --wash: #dce8e2;
+        --accent: #0f6e56;
+        --accent-deep: #0a4f3d;
+        --line: rgba(28, 36, 48, 0.12);
+        --focus: #0f6e56;
+        --max: 68rem;
+        --ease: cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        font-family: "Figtree", sans-serif;
+        font-size: 1.05rem;
+        line-height: 1.65;
+        background:
+          radial-gradient(1200px 600px at 10% -10%, #e7f1ec 0%, transparent 55%),
+          radial-gradient(900px 500px at 100% 0%, #e8eef6 0%, transparent 50%),
+          linear-gradient(180deg, #f7faf8 0%, var(--paper) 40%, #eef3f0 100%);
+        min-height: 100vh;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      :focus {
+        outline: none;
+      }
+
+      :focus-visible {
+        outline: 2px solid var(--focus);
+        outline-offset: 3px;
+      }
+
+      .skip-link {
+        position: absolute;
+        left: 1rem;
+        top: 1rem;
+        z-index: 100;
+        padding: 0.7rem 1rem;
+        border-radius: 0.35rem;
+        background: var(--ink);
+        color: #fff;
+        font-weight: 600;
+        text-decoration: none;
+        transform: translateY(-150%);
+        transition: transform 0.2s var(--ease);
+      }
+
+      .skip-link:focus {
+        outline: 2px solid #fff;
+        outline-offset: 2px;
+      }
+
+      .skip-link:focus-visible {
+        transform: translateY(0);
+      }
+
+      .wrap {
+        width: min(100% - 2rem, var(--max));
+        margin-inline: auto;
+      }
+
+      .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      /* Header */
+      .site-header {
+        position: absolute;
+        inset: 0 0 auto;
+        z-index: 2;
+        padding: 1.25rem 0;
+      }
+
+      .site-header .wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+
+      .brand {
+        font-family: "Fraunces", Georgia, serif;
+        font-weight: 600;
+        font-size: 1.15rem;
+        letter-spacing: 0.02em;
+        text-decoration: none;
+      }
+
+      .nav-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 0.85rem 1.15rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-size: 0.95rem;
+        font-weight: 500;
+      }
+
+      .nav-list a {
+        text-decoration: none;
+        color: var(--muted);
+        transition: color 0.25s var(--ease);
+      }
+
+      .nav-list a:hover,
+      .nav-list a:focus-visible {
+        color: var(--ink);
+      }
+
+      /* Hero */
+      .hero {
+        min-height: 100svh;
+        display: grid;
+        align-items: end;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-media {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+      }
+
+      .hero-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: scale(1.04);
+        animation: hero-drift 18s var(--ease) infinite alternate;
+      }
+
+      .hero-media::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(180deg, rgba(243, 246, 244, 0.18) 0%, rgba(243, 246, 244, 0.55) 45%, rgba(243, 246, 244, 0.96) 100%),
+          linear-gradient(90deg, rgba(243, 246, 244, 0.55) 0%, transparent 55%);
+      }
+
+      .hero-copy {
+        position: relative;
+        z-index: 1;
+        padding: 7.5rem 0 4.5rem;
+        max-width: 36rem;
+      }
+
+      .hero-heading {
+        margin: 0;
+      }
+
+      .hero-heading .brand-mark {
+        display: block;
+        font-family: "Fraunces", Georgia, serif;
+        font-size: clamp(2.4rem, 6vw, 3.8rem);
+        font-weight: 600;
+        line-height: 1.05;
+        letter-spacing: -0.02em;
+        margin: 0 0 1rem;
+        opacity: 0;
+        transform: translateY(18px);
+        animation: rise 0.9s var(--ease) 0.1s forwards;
+      }
+
+      .hero-heading .tagline {
+        display: block;
+        margin: 0 0 0.85rem;
+        font-family: "Fraunces", Georgia, serif;
+        font-size: clamp(1.45rem, 3.2vw, 2rem);
+        font-weight: 500;
+        line-height: 1.35;
+        opacity: 0;
+        transform: translateY(18px);
+        animation: rise 0.9s var(--ease) 0.25s forwards;
+      }
+
+      .hero-lead {
+        margin: 0 0 1.75rem;
+        color: var(--muted);
+        max-width: 30rem;
+        opacity: 0;
+        transform: translateY(18px);
+        animation: rise 0.9s var(--ease) 0.4s forwards;
+      }
+
+      .cta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem 1rem;
+        opacity: 0;
+        transform: translateY(18px);
+        animation: rise 0.9s var(--ease) 0.55s forwards;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 2.85rem;
+        padding: 0.7rem 1.25rem;
+        border-radius: 0.35rem;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.95rem;
+        transition:
+          background-color 0.25s var(--ease),
+          color 0.25s var(--ease),
+          border-color 0.25s var(--ease),
+          transform 0.25s var(--ease);
+      }
+
+      .btn:hover {
+        transform: translateY(-1px);
+      }
+
+      .btn-primary {
+        background: var(--accent);
+        color: #f7fbf9;
+      }
+
+      .btn-primary:hover,
+      .btn-primary:focus-visible {
+        background: var(--accent-deep);
+      }
+
+      .btn-ghost {
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.45);
+        color: var(--ink);
+        backdrop-filter: blur(6px);
+      }
+
+      .btn-ghost:hover,
+      .btn-ghost:focus-visible {
+        border-color: rgba(28, 36, 48, 0.28);
+        background: rgba(255, 255, 255, 0.75);
+      }
+
+      /* Sections */
+      section {
+        padding: 5rem 0;
+      }
+
+      .section-label {
+        margin: 0 0 0.6rem;
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--accent);
+      }
+
+      .section-title {
+        margin: 0 0 0.85rem;
+        font-family: "Fraunces", Georgia, serif;
+        font-size: clamp(1.7rem, 3.5vw, 2.35rem);
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        line-height: 1.2;
+      }
+
+      .section-lead {
+        margin: 0;
+        color: var(--muted);
+        max-width: 36rem;
+      }
+
+      .about {
+        border-top: 1px solid var(--line);
+      }
+
+      .about-grid {
+        display: grid;
+        gap: 2.5rem;
+        margin-top: 2.25rem;
+      }
+
+      @media (min-width: 768px) {
+        .about-grid {
+          grid-template-columns: 1.1fr 0.9fr;
+          align-items: end;
+        }
+      }
+
+      .about-visual {
+        min-height: 16rem;
+        border-radius: 0.5rem;
+        background:
+          linear-gradient(145deg, rgba(15, 110, 86, 0.18), transparent 55%),
+          linear-gradient(180deg, #c9dbd3, #b7c8d8);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .about-visual::after {
+        content: "Sample visual";
+        position: absolute;
+        inset: auto 1rem 1rem auto;
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: rgba(28, 36, 48, 0.55);
+      }
+
+      .career {
+        border-bottom: 1px solid var(--line);
+      }
+
+      .timeline {
+        list-style: none;
+        margin: 2.25rem 0 0;
+        padding: 0;
+        display: grid;
+        gap: 0;
+      }
+
+      .timeline li {
+        display: grid;
+        gap: 0.45rem 1.75rem;
+        padding: 1.45rem 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .timeline li:last-child {
+        border-bottom: 1px solid var(--line);
+      }
+
+      @media (min-width: 720px) {
+        .timeline li {
+          grid-template-columns: 9.5rem 1fr;
+          align-items: start;
+        }
+      }
+
+      .timeline time {
+        display: block;
+        font-size: 0.92rem;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        color: var(--accent);
+        padding-top: 0.2rem;
+      }
+
+      .timeline h3 {
+        margin: 0 0 0.35rem;
+        font-family: "Fraunces", Georgia, serif;
+        font-size: 1.2rem;
+        font-weight: 600;
+        line-height: 1.3;
+      }
+
+      .timeline .role {
+        margin: 0 0 0.45rem;
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: var(--ink);
+      }
+
+      .timeline p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .services {
+        background: rgba(255, 255, 255, 0.35);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .service-list {
+        list-style: none;
+        margin: 2.25rem 0 0;
+        padding: 0;
+        display: grid;
+        gap: 0;
+      }
+
+      .service-list li {
+        display: grid;
+        gap: 0.35rem 1.5rem;
+        padding: 1.35rem 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .service-list li:last-child {
+        border-bottom: 1px solid var(--line);
+      }
+
+      @media (min-width: 720px) {
+        .service-list li {
+          grid-template-columns: 11rem 1fr;
+          align-items: baseline;
+        }
+      }
+
+      .service-list h3 {
+        margin: 0;
+        font-family: "Fraunces", Georgia, serif;
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
+
+      .service-list p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .contact {
+        padding-bottom: 6rem;
+      }
+
+      .contact-box {
+        margin-top: 2rem;
+        padding: 1.75rem 0 0;
+        border-top: 1px solid var(--line);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem 2.5rem;
+        align-items: end;
+        justify-content: space-between;
+      }
+
+      .contact-meta {
+        margin: 0;
+      }
+
+      .contact-meta dt {
+        margin: 0;
+        color: var(--muted);
+        font-weight: 500;
+      }
+
+      .contact-meta dd {
+        margin: 0.2rem 0 0;
+      }
+
+      .contact-meta a {
+        color: var(--ink);
+        font-weight: 600;
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 0.18em;
+      }
+
+      .contact-meta a:hover,
+      .contact-meta a:focus-visible {
+        color: var(--accent-deep);
+      }
+
+      .site-footer {
+        padding: 1.5rem 0 2.5rem;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .site-footer .wrap {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem 1.5rem;
+        justify-content: space-between;
+      }
+
+      /* Progressive enhancement: hide only when JS is available */
+      .js .reveal {
+        opacity: 0;
+        transform: translateY(22px);
+        transition:
+          opacity 0.8s var(--ease),
+          transform 0.8s var(--ease);
+      }
+
+      .js .reveal.is-in {
+        opacity: 1;
+        transform: none;
+      }
+
+      @keyframes rise {
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+
+      @keyframes hero-drift {
+        to {
+          transform: scale(1.1) translate3d(-1.5%, -1%, 0);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        .hero-media img,
+        .hero-heading .brand-mark,
+        .hero-heading .tagline,
+        .hero-lead,
+        .cta-row,
+        .js .reveal {
+          animation: none !important;
+          transition: none !important;
+          opacity: 1 !important;
+          transform: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">本文へスキップ</a>
+
+    <header class="site-header">
+      <div class="wrap">
+        <a class="brand" href="#top">Lumen Works</a>
+        <nav aria-label="ページ内ナビゲーション">
+          <ul class="nav-list">
+            <li><a href="#about">About</a></li>
+            <li><a href="#career">Career</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div id="top" tabindex="-1"></div>
+
+      <section class="hero" aria-labelledby="hero-heading">
+        <div class="hero-media" aria-hidden="true">
+          <img
+            src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1800&q=80"
+            alt=""
+            width="1800"
+            height="1200"
+            fetchpriority="high"
+            decoding="async"
+          />
+        </div>
+        <div class="wrap hero-copy">
+          <h1 class="hero-heading" id="hero-heading">
+            <span class="brand-mark">Lumen Works</span>
+            <span class="tagline">静かに、たしかに届く仕事を。</span>
+          </h1>
+          <p class="hero-lead">
+            個人事業主向けホームページのサンプルです。氏名・住所・連絡先などの実情報は含まれていません。
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#contact">相談する</a>
+            <a class="btn btn-ghost" href="#services">サービスを見る</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="about" id="about" aria-labelledby="about-title">
+        <div class="wrap">
+          <p class="section-label reveal" aria-hidden="true">About</p>
+          <h2 class="section-title reveal" id="about-title">ひとりで届けていること</h2>
+          <p class="section-lead reveal">
+            ここには事業の自己紹介が入ります。専門分野、大切にしている姿勢、これまで支えてきたお客様のタイプなどを短く書きます。
+          </p>
+          <div class="about-grid">
+            <div class="reveal">
+              <p>
+                サンプル文です。たとえば「企画から公開までを一貫して伴走する」「小さなチームでも運用しやすい設計を優先する」など、あなたの強みが伝わる一文を置いてください。
+              </p>
+              <p>
+                実績や経歴を並べすぎず、最初の画面のあとに読む人が「この人に頼めそうだ」と感じる温度感を残すのがポイントです。
+              </p>
+            </div>
+            <div class="about-visual reveal" aria-hidden="true"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="career" id="career" aria-labelledby="career-title">
+        <div class="wrap">
+          <p class="section-label reveal" aria-hidden="true">Career</p>
+          <h2 class="section-title reveal" id="career-title">これまでの経歴</h2>
+          <p class="section-lead reveal">
+            時系列で歩みを伝えるセクションです。年・所属・役割と、そこで得た視点を短く書いてください。実名・勤務先はまだ入れていません。
+          </p>
+          <ol class="timeline" aria-label="職歴の時系列">
+            <li class="reveal">
+              <time datetime="2024">2024 — 現在</time>
+              <div>
+                <h3>個人事業として独立</h3>
+                <p class="role">事業主（サンプル）</p>
+                <p>
+                  ここには開業後の活動内容が入ります。誰向けに、どんな価値を届けているかを一言でまとめます。
+                </p>
+              </div>
+            </li>
+            <li class="reveal">
+              <time datetime="2019">2019 — 2024</time>
+              <div>
+                <h3>事業会社 / 制作チーム</h3>
+                <p class="role">〇〇担当（サンプル）</p>
+                <p>
+                  前職での役割や担当領域を書きます。数字よりも、いまの仕事につながる経験を選んで載せる想定です。
+                </p>
+              </div>
+            </li>
+            <li class="reveal">
+              <time datetime="2015">2015 — 2019</time>
+              <div>
+                <h3>スタートアップ / 受託など</h3>
+                <p class="role">〇〇（サンプル）</p>
+                <p>
+                  キャリアの起点や、専門の土台になった時期を置きます。学歴を載せる場合も、この並びに足せます。
+                </p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="services" id="services" aria-labelledby="services-title">
+        <div class="wrap">
+          <p class="section-label reveal" aria-hidden="true">Services</p>
+          <h2 class="section-title reveal" id="services-title">提供メニュー（仮）</h2>
+          <p class="section-lead reveal">
+            実際のサービス名と説明に差し替えてください。3つ前後に絞ると読みやすくなります。
+          </p>
+          <ul class="service-list">
+            <li class="reveal">
+              <h3>Discovery</h3>
+              <p>課題の整理と方針づくり。何を公開し、何を残すかを一緒に決めます。</p>
+            </li>
+            <li class="reveal">
+              <h3>Build</h3>
+              <p>サイトや資料などの制作。シンプルな構成で、更新しやすい形に整えます。</p>
+            </li>
+            <li class="reveal">
+              <h3>Care</h3>
+              <p>公開後の見直しや改善。小さく続けられる運用を前提にサポートします。</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="contact" id="contact" aria-labelledby="contact-title">
+        <div class="wrap">
+          <p class="section-label reveal" aria-hidden="true">Contact</p>
+          <h2 class="section-title reveal" id="contact-title">まずは短くご相談を</h2>
+          <p class="section-lead reveal">
+            ここにはメールアドレスやフォームへの導線を置きます。いまはサンプル用のダミーです。
+          </p>
+          <div class="contact-box reveal">
+            <dl class="contact-meta">
+              <dt>Email</dt>
+              <dd>
+                <a href="mailto:hello@example.com">hello@example.com</a>
+              </dd>
+            </dl>
+            <a class="btn btn-primary" href="mailto:hello@example.com">メールを送る</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <p>
+          <small>© <span id="year">2026</span> Sample — Lumen Works</small>
+        </p>
+        <p>
+          <small>GitHub Pages 用のデモページ</small>
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      document.documentElement.classList.add("js");
+
+      const yearEl = document.getElementById("year");
+      if (yearEl) {
+        yearEl.textContent = String(new Date().getFullYear());
+      }
+
+      const reveals = document.querySelectorAll(".reveal");
+
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            for (const entry of entries) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-in");
+                observer.unobserve(entry.target);
+              }
+            }
+          },
+          { threshold: 0.18, rootMargin: "0px 0px -8% 0px" }
+        );
+
+        reveals.forEach((el) => observer.observe(el));
+      } else {
+        reveals.forEach((el) => el.classList.add("is-in"));
+      }
+    </script>
+  </body>
+</html>
