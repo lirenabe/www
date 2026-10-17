@@ -3,35 +3,37 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Lumen Works｜個人事業のホームページ（サンプル）</title>
+    <title>Lire｜Local Issues Resolved by Engineering</title>
     <meta
       name="description"
-      content="Lumen Worksは個人事業主向けホームページのサンプルです。事業紹介・経歴・サービス・お問い合わせの構成例を掲載しています。"
+      content="Lire（リラ）は、Local Issues Resolved by Engineering。渡部健太（なべ）のプロフィールと経歴、技術で身近な課題解決に取り組む活動を紹介しています。"
     />
     <meta name="robots" content="index,follow" />
+    <meta name="author" content="渡部健太（なべ）" />
     <meta name="theme-color" content="#0f6e56" />
     <link rel="canonical" href="https://lirenabe.github.io/www/" />
 
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="ja_JP" />
-    <meta property="og:site_name" content="Lumen Works" />
-    <meta property="og:title" content="Lumen Works｜個人事業のホームページ（サンプル）" />
+    <meta property="og:site_name" content="Lire" />
+    <meta property="og:title" content="Lire｜Local Issues Resolved by Engineering" />
     <meta
       property="og:description"
-      content="事業紹介・経歴・サービス・お問い合わせの構成例。個人事業主向けホームページのサンプルページです。"
+      content="技術で身近な課題を解決する。渡部健太（なべ）のプロフィールと経歴。"
     />
     <meta property="og:url" content="https://lirenabe.github.io/www/" />
     <meta
       property="og:image"
       content="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80"
     />
-    <meta property="og:image:alt" content="明るいワークスペースのサンプル画像" />
+    <meta property="og:image:alt" content="明るいワークスペースのイメージ画像" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Lumen Works｜個人事業のホームページ（サンプル）" />
+    <meta name="twitter:site" content="@nabe8559" />
+    <meta name="twitter:title" content="Lire｜Local Issues Resolved by Engineering" />
     <meta
       name="twitter:description"
-      content="事業紹介・経歴・サービス・お問い合わせの構成例。個人事業主向けホームページのサンプルページです。"
+      content="技術で身近な課題を解決する。渡部健太（なべ）のプロフィールと経歴。"
     />
     <meta
       name="twitter:image"
@@ -48,13 +50,31 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "ProfessionalService",
-        "name": "Lumen Works",
-        "description": "個人事業主向けホームページのサンプルです。事業紹介・経歴・サービス案内の構成例を掲載しています。",
-        "url": "https://lirenabe.github.io/www/",
-        "email": "hello@example.com",
-        "areaServed": "JP",
-        "inLanguage": "ja"
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://lirenabe.github.io/www/#person",
+            "name": "渡部健太",
+            "alternateName": "なべ",
+            "url": "https://lirenabe.github.io/www/",
+            "jobTitle": "Engineer",
+            "sameAs": [
+              "https://twitter.com/nabe8559",
+              "https://note.com/nabe8559/",
+              "https://www.liretech.com/"
+            ]
+          },
+          {
+            "@type": "ProfessionalService",
+            "name": "Lire",
+            "alternateName": "リラ",
+            "description": "Local Issues Resolved by Engineering。技術を使って身近な課題の解決に取り組む活動。",
+            "url": "https://lirenabe.github.io/www/",
+            "areaServed": "JP",
+            "inLanguage": "ja",
+            "founder": { "@id": "https://lirenabe.github.io/www/#person" }
+          }
+        ]
       }
     </script>
 
@@ -362,6 +382,16 @@
         border-top: 1px solid var(--line);
       }
 
+      .about > .wrap > .section-label {
+        margin-bottom: 1.75rem;
+      }
+
+      .about-block + .about-block {
+        margin-top: 3.5rem;
+        padding-top: 3.25rem;
+        border-top: 1px solid var(--line);
+      }
+
       .about-grid {
         display: grid;
         gap: 2.5rem;
@@ -385,73 +415,123 @@
         overflow: hidden;
       }
 
-      .about-visual::after {
-        content: "Sample visual";
-        position: absolute;
-        inset: auto 1rem 1rem auto;
-        font-size: 0.8rem;
-        font-weight: 600;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        color: rgba(28, 36, 48, 0.55);
-      }
-
       .career {
         border-bottom: 1px solid var(--line);
       }
 
+      .career-group {
+        margin-top: 2.75rem;
+      }
+
+      .career-group:first-of-type {
+        margin-top: 2.25rem;
+      }
+
+      .career-group-title {
+        margin: 0 0 0.35rem;
+        font-family: "Fraunces", Georgia, serif;
+        font-size: 1.15rem;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+      }
+
+      .career-group-note {
+        margin: 0 0 0.25rem;
+        color: var(--muted);
+        font-size: 0.95rem;
+        max-width: 36rem;
+      }
+
       .timeline {
         list-style: none;
-        margin: 2.25rem 0 0;
+        margin: 0.85rem 0 0;
         padding: 0;
         display: grid;
         gap: 0;
       }
 
-      .timeline li {
+      .timeline > .org {
         display: grid;
-        gap: 0.45rem 1.75rem;
-        padding: 1.45rem 0;
+        gap: 0.55rem 1.75rem;
+        padding: 1.55rem 0;
         border-top: 1px solid var(--line);
       }
 
-      .timeline li:last-child {
+      .timeline > .org:last-child {
         border-bottom: 1px solid var(--line);
       }
 
       @media (min-width: 720px) {
-        .timeline li {
+        .timeline > .org {
           grid-template-columns: 9.5rem 1fr;
           align-items: start;
         }
       }
 
-      .timeline time {
+      .timeline .org-period {
         display: block;
         font-size: 0.92rem;
         font-weight: 600;
         letter-spacing: 0.04em;
         color: var(--accent);
-        padding-top: 0.2rem;
+        padding-top: 0.25rem;
       }
 
-      .timeline h3 {
-        margin: 0 0 0.35rem;
+      .timeline h4 {
+        margin: 0;
         font-family: "Fraunces", Georgia, serif;
-        font-size: 1.2rem;
+        font-size: 1.25rem;
         font-weight: 600;
         line-height: 1.3;
       }
 
-      .timeline .role {
-        margin: 0 0 0.45rem;
-        font-size: 0.95rem;
+      .role-list {
+        list-style: none;
+        margin: 1rem 0 0;
+        padding: 0 0 0 0.95rem;
+        border-left: 2px solid rgba(15, 110, 86, 0.22);
+        display: grid;
+        gap: 1.1rem;
+      }
+
+      .role-list > li {
+        display: grid;
+        gap: 0.3rem 1.25rem;
+      }
+
+      @media (min-width: 720px) {
+        .role-list > li:has(> time) {
+          grid-template-columns: 8.5rem 1fr;
+          align-items: start;
+        }
+      }
+
+      .role-list time {
+        display: block;
+        font-size: 0.88rem;
         font-weight: 600;
+        letter-spacing: 0.03em;
+        color: var(--accent);
+        padding-top: 0.15rem;
+      }
+
+      .role-list .role {
+        margin: 0 0 0.35rem;
+        font-family: "Figtree", sans-serif;
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: 1.35;
         color: var(--ink);
       }
 
       .timeline p {
         margin: 0;
+        color: var(--muted);
+      }
+
+      .timeline .skills {
+        margin: 0.55rem 0 0;
+        font-size: 0.92rem;
         color: var(--muted);
       }
 
@@ -514,6 +594,12 @@
       }
 
       .contact-meta {
+        display: grid;
+        gap: 1rem;
+        margin: 0;
+      }
+
+      .contact-meta > div {
         margin: 0;
       }
 
@@ -605,7 +691,7 @@
 
     <header class="site-header">
       <div class="wrap">
-        <a class="brand" href="#top">Lumen Works</a>
+        <a class="brand" href="#top">Lire</a>
         <nav aria-label="ページ内ナビゲーション">
           <ul class="nav-list">
             <li><a href="#about">About</a></li>
@@ -633,36 +719,53 @@
         </div>
         <div class="wrap hero-copy">
           <h1 class="hero-heading" id="hero-heading">
-            <span class="brand-mark">Lumen Works</span>
-            <span class="tagline">静かに、たしかに届く仕事を。</span>
+            <span class="brand-mark">Lire</span>
+            <span class="tagline">Local Issues Resolved by Engineering</span>
           </h1>
           <p class="hero-lead">
-            個人事業主向けホームページのサンプルです。氏名・住所・連絡先などの実情報は含まれていません。
+            技術で身近な課題を解決する。渡部健太のプロフィールサイトです。
           </p>
           <div class="cta-row">
             <a class="btn btn-primary" href="#contact">相談する</a>
-            <a class="btn btn-ghost" href="#services">サービスを見る</a>
+            <a class="btn btn-ghost" href="#career">経歴を見る</a>
           </div>
         </div>
       </section>
 
-      <section class="about" id="about" aria-labelledby="about-title">
+      <section class="about" id="about" aria-label="About">
         <div class="wrap">
           <p class="section-label reveal" aria-hidden="true">About</p>
-          <h2 class="section-title reveal" id="about-title">ひとりで届けていること</h2>
-          <p class="section-lead reveal">
-            ここには事業の自己紹介が入ります。専門分野、大切にしている姿勢、これまで支えてきたお客様のタイプなどを短く書きます。
-          </p>
-          <div class="about-grid">
+
+          <div class="about-block" id="message" aria-labelledby="message-title">
+            <h2 class="section-title reveal" id="message-title">メッセージ</h2>
+            <p class="section-lead reveal">
+              屋号である Lire（リラ）は、Local Issues Resolved by Engineering の頭文字からつけました。
+            </p>
+            <div class="about-grid">
+              <div class="reveal">
+                <p>
+                  Web系のIT業界に入って10年以上が経ち、身につけた技術を使って身近な課題を解決したいという思いを込めたものです。社会的な課題の解決に挑戦していたり、面白いアイデアを持っている方は沢山います。ですがその方々が解決のための具体的な方法に詳しい訳では無いことが多々あると思います。そんな方々の手助けをすることによって社会に貢献したいと考えています。
+                </p>
+                <p>
+                  特に出身地である秋田県は、少子高齢化や人口減少など「課題先進県」といっても過言ではない状況です。それ故に多くの起業家を惹き付け、沢山の面白いアイデアがカタチになりつつあります。私自身もその一端を担うことを目指しています。
+                </p>
+              </div>
+              <div class="about-visual reveal" aria-hidden="true"></div>
+            </div>
+          </div>
+
+          <div class="about-block" id="profile" aria-labelledby="profile-title">
+            <h2 class="section-title reveal" id="profile-title">プロフィール</h2>
+            <p class="section-lead reveal">渡部健太（なべ）</p>
             <div class="reveal">
               <p>
-                サンプル文です。たとえば「企画から公開までを一貫して伴走する」「小さなチームでも運用しやすい設計を優先する」など、あなたの強みが伝わる一文を置いてください。
+                秋田県潟上市出身。受託会社で約5年勤務した後、グリー株式会社に入社しゲームプラットフォームの開発に従事。2014年からは株式会社コズレにてエンジニアチーム並びにWebメディア立ち上げに携わる。2016年11月にビザスクに参画し、プロダクト開発を牽引。開発チームリーダー、グループ長を経て2021年からプロダクトマネージャ（PdM）としてエキスパート向けプロダクトの戦略立案、ロードマップ策定に携わる。2023年からはVP of
+                Productとしてビザスクプロダクト全体の責任者に就任。2025年5月からグラファーに入社し、プロダクト開発とエンジニアマネージャーを兼務。2026年9月よりアソビュー株式会社にエンジニアとして入社。
               </p>
               <p>
-                実績や経歴を並べすぎず、最初の画面のあとに読む人が「この人に頼めそうだ」と感じる温度感を残すのがポイントです。
+                2020年4月より、業務委託で秋田発の共創型コミュニティプラットフォーム「シェアビレッジ」に参画しています。
               </p>
             </div>
-            <div class="about-visual reveal" aria-hidden="true"></div>
           </div>
         </div>
       </section>
@@ -672,62 +775,201 @@
           <p class="section-label reveal" aria-hidden="true">Career</p>
           <h2 class="section-title reveal" id="career-title">これまでの経歴</h2>
           <p class="section-lead reveal">
-            時系列で歩みを伝えるセクションです。年・所属・役割と、そこで得た視点を短く書いてください。実名・勤務先はまだ入れていません。
+            正社員としての職歴と、業務委託での取り組みを分けて掲載しています。
           </p>
-          <ol class="timeline" aria-label="職歴の時系列">
-            <li class="reveal">
-              <time datetime="2024">2024 — 現在</time>
-              <div>
-                <h3>個人事業として独立</h3>
-                <p class="role">事業主（サンプル）</p>
-                <p>
-                  ここには開業後の活動内容が入ります。誰向けに、どんな価値を届けているかを一言でまとめます。
-                </p>
-              </div>
-            </li>
-            <li class="reveal">
-              <time datetime="2019">2019 — 2024</time>
-              <div>
-                <h3>事業会社 / 制作チーム</h3>
-                <p class="role">〇〇担当（サンプル）</p>
-                <p>
-                  前職での役割や担当領域を書きます。数字よりも、いまの仕事につながる経験を選んで載せる想定です。
-                </p>
-              </div>
-            </li>
-            <li class="reveal">
-              <time datetime="2015">2015 — 2019</time>
-              <div>
-                <h3>スタートアップ / 受託など</h3>
-                <p class="role">〇〇（サンプル）</p>
-                <p>
-                  キャリアの起点や、専門の土台になった時期を置きます。学歴を載せる場合も、この並びに足せます。
-                </p>
-              </div>
-            </li>
-          </ol>
+
+          <div class="career-group reveal">
+            <h3 class="career-group-title" id="career-fulltime">正社員</h3>
+            <ol class="timeline" aria-labelledby="career-fulltime">
+              <li class="org reveal">
+                <time class="org-period" datetime="2026-09">2026/09 —</time>
+                <div class="org-body">
+                  <h4>アソビュー株式会社</h4>
+                  <ol class="role-list">
+                    <li>
+                      <div>
+                        <h5 class="role">Engineer</h5>
+                        <p>
+                          プラットフォーム事業本部 / パートナープラットフォーム事業部にエンジニアとして参画。
+                        </p>
+                      </div>
+                    </li>
+                  </ol>
+                </div>
+              </li>
+              <li class="org reveal">
+                <time class="org-period" datetime="2025-05">2025/05 — 2026/06</time>
+                <div class="org-body">
+                  <h4>株式会社グラファー</h4>
+                  <ol class="role-list">
+                    <li>
+                      <div>
+                        <h5 class="role">Engineer Manager</h5>
+                        <p>
+                          行政手続きオンラインプラットフォーム「スマート申請」の開発、運用、チームビルディング、ロードマップ策定などを行う。
+                        </p>
+                      </div>
+                    </li>
+                  </ol>
+                </div>
+              </li>
+              <li class="org reveal">
+                <time class="org-period" datetime="2016-11">2016/11 — 2025/04</time>
+                <div class="org-body">
+                  <h4>株式会社ビザスク</h4>
+                  <ol class="role-list">
+                    <li>
+                      <time datetime="2023-03">2023/03 — 2025/04</time>
+                      <div>
+                        <h5 class="role">VP of Product</h5>
+                        <p>
+                          プロダクト全体の責任者として、プロダクト戦略や中期ロードマップ策定、プロダクト組織の継続的改善に取り組む。
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <time datetime="2021-03">2021/03 — 2023/02</time>
+                      <div>
+                        <h5 class="role">Product Manager</h5>
+                        <p>
+                          エキスパート向けのPdMとして、ロードマップの策定や分析、ステークホルダーとの調整を行う。またエキスパート向けのディレクション組織の立ち上げなども企画。
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <time datetime="2018-08">2018/08 — 2023/02</time>
+                      <div>
+                        <h5 class="role">Engineer Manager</h5>
+                        <p>エンジニア採用活動や、チームビルディング、人事評価などを行う。</p>
+                      </div>
+                    </li>
+                    <li>
+                      <time datetime="2016-11">2016/11 —</time>
+                      <div>
+                        <h5 class="role">Engineer</h5>
+                        <p>
+                          ビザスクLiteのチーム利用の初期開発、管理画面のスタッフ業務効率化のための継続開発などを担当。その後はエキスパート向けのUIUXの改善などを担う。その他にも技術的負債の解消やQAチームの立ち上げなどにも携わる。自称ビザスクのなんでも屋。
+                        </p>
+                        <p class="skills">
+                          スキル：Python、Django、FastAPI、TypeScript、Vue.js、MySQL、Elasticsearch、Google
+                          Cloud Platform
+                        </p>
+                      </div>
+                    </li>
+                  </ol>
+                </div>
+              </li>
+              <li class="org reveal">
+                <time class="org-period" datetime="2014-09">2014/09 — 2016/10</time>
+                <div class="org-body">
+                  <h4>株式会社コズレ</h4>
+                  <ol class="role-list">
+                    <li>
+                      <div>
+                        <h5 class="role">Engineer</h5>
+                        <p>
+                          エンジニア1号かつ社員1号としてジョイン。子育てメディアのフルスクラッチ開発において、インフラ設計、データベース設計、サーバーサイド開発、フロントエンド開発のすべてを担当。その後は会員機能の開発やマーケティング施策の開発を行う。
+                        </p>
+                        <p class="skills">
+                          スキル：Java、MySQL、Elasticsearch、JavaScript、React、SCSS、AWS
+                        </p>
+                      </div>
+                    </li>
+                  </ol>
+                </div>
+              </li>
+              <li class="org reveal">
+                <time class="org-period" datetime="2011-01">2011/01 — 2014/08</time>
+                <div class="org-body">
+                  <h4>グリー株式会社</h4>
+                  <ol class="role-list">
+                    <li>
+                      <div>
+                        <h5 class="role">Engineer</h5>
+                        <p>
+                          3rd Party ゲームのためのプラットフォーム開発において、SNS連携APIの開発やデベロッパー向けサイトの開発を担当。グローバル展開においてはデベロッパーデータの移行作業やサイトリニューアルに従事。その後はゲームポータルサイトにおけるインストール数最大化を目的にグロースハック施策の開発を担当。
+                        </p>
+                        <p class="skills">スキル：PHP、MySQL、HTML、jQuery</p>
+                      </div>
+                    </li>
+                  </ol>
+                </div>
+              </li>
+              <li class="org reveal">
+                <time class="org-period" datetime="2006-04">2006/04 — 2010/12</time>
+                <div class="org-body">
+                  <h4>株式会社リキネットシステム</h4>
+                  <ol class="role-list">
+                    <li>
+                      <div>
+                        <h5 class="role">Engineer</h5>
+                        <p>
+                          新卒研修後、ケーブルテレビのモデム管理システムの受託開発を担当。その後は自社サービスの新規開発においてサーバーサイドを担当し、DB設計やAPI開発を行う。
+                        </p>
+                        <p class="skills">スキル：Java、Seasar2、PostgreSQL、HTML、CSS、JavaScript</p>
+                      </div>
+                    </li>
+                  </ol>
+                </div>
+              </li>
+            </ol>
+          </div>
+
+          <div class="career-group reveal">
+            <h3 class="career-group-title" id="career-contract">業務委託</h3>
+            <p class="career-group-note">
+              正社員とは別に、業務委託として関わっている取り組みです。2020年4月より秋田発の共創型コミュニティプラットフォーム「シェアビレッジ」に参画しています。
+            </p>
+            <ol class="timeline" aria-labelledby="career-contract">
+              <li class="org reveal">
+                <time class="org-period" datetime="2022-04">2022/04 —</time>
+                <div class="org-body">
+                  <h4>Share Village 株式会社</h4>
+                  <ol class="role-list">
+                    <li>
+                      <div>
+                        <h5 class="role">Engineer Lead（業務委託）</h5>
+                        <p>
+                          コミュニティプラットフォーム「Share Village」の正式公開、各種改善施策の開発と外部開発会社との工程管理、Slack連携など新規機能開発を担当。開発計画の策定にも携わる。
+                        </p>
+                        <p class="skills">
+                          スキル：TypeScript、Nuxt.js、Firebase、Google Cloud Platform
+                        </p>
+                      </div>
+                    </li>
+                  </ol>
+                </div>
+              </li>
+            </ol>
+          </div>
         </div>
       </section>
 
       <section class="services" id="services" aria-labelledby="services-title">
         <div class="wrap">
           <p class="section-label reveal" aria-hidden="true">Services</p>
-          <h2 class="section-title reveal" id="services-title">提供メニュー（仮）</h2>
+          <h2 class="section-title reveal" id="services-title">提供サービス</h2>
           <p class="section-lead reveal">
-            実際のサービス名と説明に差し替えてください。3つ前後に絞ると読みやすくなります。
+            Web・プロダクト領域での実務経験をもとに、次の3つの形で支援します。
           </p>
           <ul class="service-list">
             <li class="reveal">
-              <h3>Discovery</h3>
-              <p>課題の整理と方針づくり。何を公開し、何を残すかを一緒に決めます。</p>
+              <h3>プロダクト開発</h3>
+              <p>
+                要件の整理から設計・実装・改善まで、プロダクトづくりを一気通貫で行います。スタートアップでのゼロイチ開発や、プラットフォーム・業務システムの継続開発、技術的負債の解消といった経験を活かし、プロダクト・事業のあらゆるフェーズに参画可能です。
+              </p>
             </li>
             <li class="reveal">
-              <h3>Build</h3>
-              <p>サイトや資料などの制作。シンプルな構成で、更新しやすい形に整えます。</p>
+              <h3>開発組織支援</h3>
+              <p>
+                エンジニア採用、チームビルディング、評価、開発プロセスの整備など、開発組織が持続的に成果を出せる状態づくりを支援します。これから開発組織を立ち上げたい、といったご相談も対応可能です。
+              </p>
             </li>
             <li class="reveal">
-              <h3>Care</h3>
-              <p>公開後の見直しや改善。小さく続けられる運用を前提にサポートします。</p>
+              <h3>身近な課題の伴走支援</h3>
+              <p>
+                「やりたいことはあるが、どう進めるとよいか分からない」という段階から、課題の整理、打ち手の選定、進め方の設計まで一緒に考えます。技術選定や開発体制の相談、プロトタイプまでの道筋づくりなど、課題解決のためのアイデア実現に向けてあらゆる面で伴走支援します。
+              </p>
             </li>
           </ul>
         </div>
@@ -736,18 +978,40 @@
       <section class="contact" id="contact" aria-labelledby="contact-title">
         <div class="wrap">
           <p class="section-label reveal" aria-hidden="true">Contact</p>
-          <h2 class="section-title reveal" id="contact-title">まずは短くご相談を</h2>
-          <p class="section-lead reveal">
-            ここにはメールアドレスやフォームへの導線を置きます。いまはサンプル用のダミーです。
-          </p>
+          <h2 class="section-title reveal" id="contact-title">お問い合わせ</h2>
+          <p class="section-lead reveal">お問い合わせは以下よりお願いします。</p>
           <div class="contact-box reveal">
             <dl class="contact-meta">
-              <dt>Email</dt>
-              <dd>
-                <a href="mailto:hello@example.com">hello@example.com</a>
-              </dd>
+              <div>
+                <dt>X (Twitter)</dt>
+                <dd>
+                  <a
+                    href="https://twitter.com/nabe8559"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    >@nabe8559</a
+                  >
+                </dd>
+              </div>
+              <div>
+                <dt>Blog</dt>
+                <dd>
+                  <a
+                    href="https://note.com/nabe8559/"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    >note.com/nabe8559</a
+                  >
+                </dd>
+              </div>
             </dl>
-            <a class="btn btn-primary" href="mailto:hello@example.com">メールを送る</a>
+            <a
+              class="btn btn-primary"
+              href="https://twitter.com/nabe8559"
+              rel="noopener noreferrer"
+              target="_blank"
+              >Xで連絡する</a
+            >
           </div>
         </div>
       </section>
@@ -756,10 +1020,10 @@
     <footer class="site-footer">
       <div class="wrap">
         <p>
-          <small>© <span id="year">2026</span> Sample — Lumen Works</small>
+          <small>© <span id="year">2026</span> Lire</small>
         </p>
         <p>
-          <small>GitHub Pages 用のデモページ</small>
+          <small>Local Issues Resolved by Engineering</small>
         </p>
       </div>
     </footer>
